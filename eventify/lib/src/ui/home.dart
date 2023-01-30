@@ -36,7 +36,6 @@ class _Home extends State<Home> {
   var currentDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
   TextEditingController editingController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,41 +46,37 @@ class _Home extends State<Home> {
           style: Styles.textStyles,
         ),
       ),
-      body: ListView(padding: const EdgeInsets.all(30.0), children: [
-        Column(
-          children: [
-            TextField(
-              onChanged: (value) {},
-              controller: editingController,
-              decoration: const InputDecoration(
-                  labelText: "Keresés...",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5)))),
-            ),
-          ],
-        ),
-
-        const SizedBox(
-          height: 25.0,
-        ),
-        const SizedBox(
-          height: 25.0,
-        ),
-        /* const Box(),
-          const SizedBox(
-            height: 25.0,
-          ),
-          const Box(),
-          const SizedBox(
-            height: 25.0,
-          ),
-          const Box(),
-          const SizedBox(
-            height: 25.0,
-          ),
-          const Box(),*/
-      ]),
+      body: Container(
+          padding: const EdgeInsets.all(30.0),
+          child: (
+              ListView(
+            children: [
+              TextField(
+                onChanged: (value) {},
+                controller: editingController,
+                decoration: const InputDecoration(
+                    labelText: "Keresés...",
+                    prefixIcon: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5)))),
+              ),
+              SizedBox(
+                height: 584,
+                child: ListView(
+                  children: EVENTS
+                      .map(
+                        (eventData) => Box(
+                            eventData.id,
+                            eventData.title,
+                            eventData.city,
+                            eventData.date,
+                            eventData.eventImage),
+                      )
+                      .toList(),
+                ),
+              )
+            ],
+          ))),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,

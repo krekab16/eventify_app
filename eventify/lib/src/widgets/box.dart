@@ -12,7 +12,7 @@ class Box extends StatelessWidget {
   final String city;
   final String eventImage;
 
-  Box(@required this.id, @required this.title, @required this.date,
+  const Box(@required this.id, @required this.title, @required this.date,
       @required this.city, @required this.eventImage);
 
   void selectEvent(BuildContext ctx) {
@@ -27,17 +27,17 @@ class Box extends StatelessWidget {
     return InkWell(
       onTap: () => selectEvent(context),
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         elevation: 4,
-        margin: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(top: 10),
         child: Column(
           children: [
             Stack(
               children: [
                 ClipRRect(
                   borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(5),
+                    topRight: Radius.circular(5),
                   ),
                   child: Image.asset(
                     eventImage,

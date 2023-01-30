@@ -23,7 +23,7 @@ import 'package:flutter/material.dart';
 
 class Events {
   final String id;
-  final String categories;
+
   final String title;
   final String eventImage;
   final String city;
@@ -31,7 +31,7 @@ class Events {
 
   const Events({
     required this.id,
-    required this.categories,
+
     required this.title,
     required this.eventImage,
     required this.city,
