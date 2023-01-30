@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:eventify/screens/welcome.dart';
+import 'package:eventify/src/ui/welcome.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
